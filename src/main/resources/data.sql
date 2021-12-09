@@ -1,0 +1,14 @@
+INSERT INTO USER (ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, EMAIL, ROLE, custom_field_1, custom_field_2, custom_field_3, custom_field_4, ENABLED, LASTPASSWORDRESETDATE) VALUES (1, 'admin', '$2a$08$lDnHPz7eUkSi6ao14Twuau08mzhWrL4kyZGGU5xfiGALO/Vxd5DOi', 'admin', 'admin', 'admin@admin.com', 'client2010', '2010', '01/01/1990', '1', 'Mr', 1, PARSEDATETIME('01-01-2016', 'dd-MM-yyyy'));
+INSERT INTO USER (ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, EMAIL, ROLE, custom_field_1, custom_field_2, custom_field_3, custom_field_4, ENABLED, LASTPASSWORDRESETDATE) VALUES (2, 'user', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'user', 'user', 'enabled@user.com', 'client2010', '2010', '01/01/1990', '1', 'Mr', 1, PARSEDATETIME('01-01-2016','dd-MM-yyyy'));
+INSERT INTO USER (ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, EMAIL, ROLE, custom_field_1, custom_field_2, custom_field_3, custom_field_4, ENABLED, LASTPASSWORDRESETDATE) VALUES (3, 'disabled', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'user', 'user', 'disabled@user.com', 'client2010', '2010', '01/01/1990', '1', 'Mr', 0, PARSEDATETIME('01-01-2016','dd-MM-yyyy'));
+INSERT INTO USER (ID, USERNAME, PASSWORD, FIRSTNAME, LASTNAME, EMAIL, ROLE, custom_field_1, custom_field_2, custom_field_3, custom_field_4, ENABLED, LASTPASSWORDRESETDATE) VALUES (4, 'user2', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'Henry', 'Dupont', 'test.pmu@exemple.fr', 'client2010', '2010', '01/01/1990', '1', 'Mr', 1, PARSEDATETIME('01-01-2016','dd-MM-yyyy'));
+
+
+INSERT INTO AUTHORITY (ID, NAME) VALUES (1, 'ROLE_USER');
+INSERT INTO AUTHORITY (ID, NAME) VALUES (2, 'ROLE_ADMIN');
+
+INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_ID) VALUES (1, 1);
+INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_ID) VALUES (1, 2);
+INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_ID) VALUES (2, 1);
+INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_ID) VALUES (3, 1);
+INSERT INTO USER_AUTHORITY (USER_ID, AUTHORITY_ID) VALUES (4, 2);
